@@ -1,4 +1,8 @@
 <div class="sessions">
+    <form>
+        <input type="text" name="txtProject" placeholder="Upisi ime projekta" class="session-input">
+        <input type="submit" value="Stop" class="session-submit">
+    </form>
     <div class="session" *ngFor="let session of sessions; let i = index">
         <div class="idSession">{{i}}</div>
         <div class="start">{{session.start}}</div>
