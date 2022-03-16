@@ -1,1 +1,41 @@
-<p>show-session works!</p>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Start</button>
+<table class="table table-striped">
+    <thead>
+        <th>Id</th>
+        <th>Project</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th>Duration</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of sessionList$|async">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.datestart}}</td>
+            <td>{{item.dateend}}</td>
+            <td>{{item.duration}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Timely</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>BLEEEEEE</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
