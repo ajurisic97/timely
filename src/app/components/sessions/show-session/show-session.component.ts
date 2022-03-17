@@ -81,6 +81,7 @@ export class ShowSessionComponent implements OnInit {
   modalClose(){
     this.activateAddEdit = false;
     this.sessionList$=this.service.getSessionList();
+    
   }
 
 }

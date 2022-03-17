@@ -102,18 +102,6 @@ export class AddEditSessionComponent implements OnInit {
     })
   }
 
-  deleteSession(){
-    var x = this.service.getSessionById(3);
-    var y = {
-      id:0,
-      name:"",
-      dateStart:new Date(),
-      dateEnd:new Date(),
-      duration:"",
-
-    }
-    
-    console.log(x.toString());
-  }
+  
 
 }
