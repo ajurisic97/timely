@@ -1,5 +1,6 @@
 export class Session{
-    start!:string;
-    stop!:string;
+    name!:string;
+    dateStart!:string;
+    dateEnd!:string;
     duration!:string;
 }

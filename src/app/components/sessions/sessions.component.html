@@ -1,14 +1,3 @@
-<div class="sessions">
-    <form>
-        <input type="text" name="txtProject" placeholder="Upisi ime projekta" class="session-input">
-        <input type="submit" value="Stop" class="session-submit">
-    </form>
-    <div class="session" *ngFor="let session of sessions; let i = index">
-        <div class="idSession">{{i}}</div>
-        <div class="start">{{session.start}}</div>
-        <div class="stop">{{session.stop}}</div>
-        <div class="duration">{{session.duration}}</div>
-        <button class="delete" (click)="deleteSession(i)">Ukloni</button>
-        <button class="edit">Uredi</button>
-    </div>
-</div>
+<h1 class="text-center">Timely</h1>
+<br>
+<app-show-session></app-show-session>

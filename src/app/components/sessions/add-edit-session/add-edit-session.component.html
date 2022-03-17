@@ -1,1 +1,15 @@
-<p>add-edit-session works!</p>
+<form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Ime projekta</label>
+        <!-- <input type="text" class="form-control" name="sessionId" [(ngModel)]="sessionId" *ngIf="inspection.id!=0" disabled] > -->
+        <input type="text" class="form-control" [(ngModel)]="name" name="name">
+    </div>
+    <button class="btn btn-primary"
+    (click)="addSession()" 
+    *ngIf="session.id==0" 
+    ></button>
+    <button class="btn btn-primary"
+    (click)="updateSession()" 
+    *ngIf="session.id!=0" 
+    ></button>
+</form>
