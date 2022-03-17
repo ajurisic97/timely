@@ -71,7 +71,49 @@ export class AddEditSessionComponent implements OnInit {
     })
   }
   updateSession(){
+    
+    
+    var session = {
+      name: this.name,
+      id: this.id,
+      dateStart:new Date(this.dateStart),
+      dateEnd:new Date(this.dateEnd),
+      duration:this.duration
+    }
+    var id:number = this.id;
+    console.log("TEST:");
+    console.log(session);
+    this.service.updateSession(id,session).subscribe(res =>{
+      var closeModalBtn = document.getElementById('add-edit-modal-close');
+      if(closeModalBtn){
+        closeModalBtn.click();
+      }
+      var showSuccess = document.getElementById('update-success-alert');
 
+      if (showSuccess){
+        showSuccess.style.display="block"
+
+      }
+      setTimeout(function(){
+        if (showSuccess){
+          showSuccess.style.display="none";
+        }
+      },4000)
+    })
+  }
+
+  deleteSession(){
+    var x = this.service.getSessionById(3);
+    var y = {
+      id:0,
+      name:"",
+      dateStart:new Date(),
+      dateEnd:new Date(),
+      duration:"",
+
+    }
+    
+    console.log(x.toString());
   }
 
 }

@@ -3,13 +3,18 @@
         <label for="name" class="form-label">Ime projekta</label>
         <!-- <input type="text" class="form-control" name="sessionId" [(ngModel)]="sessionId" *ngIf="inspection.id!=0" disabled] > -->
         <input type="text" class="form-control" [(ngModel)]="name" name="name">
+        <input type="text" class="form-control" [(ngModel)]="dateStart" name="dateStart" disabled>
+        <input type="text" class="form-control" [(ngModel)]="dateEnd" name="dateEnd" disabled>
+        <input type="text" class="form-control" [(ngModel)]="duration" name="duration" disabled>
+
     </div>
     <button class="btn btn-primary"
     (click)="addSession()" 
     *ngIf="session.id==0" 
-    ></button>
+    >Stop</button>
     <button class="btn btn-primary"
     (click)="updateSession()" 
     *ngIf="session.id!=0" 
-    ></button>
+    >Izmjeni ime</button>
+    
 </form>

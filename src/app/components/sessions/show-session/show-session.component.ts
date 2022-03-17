@@ -51,6 +51,33 @@ export class ShowSessionComponent implements OnInit {
     this.modalTitle="Predaj projekt"
     this.activateAddEdit = true;
   }
+  modalEdit(item:any){
+    this.session = item;
+    this.modalTitle="Promjeni ime projekta";
+    this.activateAddEdit = true;
+  }
+  deleteSession(item:any){
+    if(confirm(`Jeste li sigurni da zelite obrisati projekt ${item.id} ${item.name}?`)){
+      this.service.deleteSession(item.id).subscribe(res =>{
+        var closeModalBtn = document.getElementById('add-edit-modal-close');
+        if(closeModalBtn){
+          closeModalBtn.click();
+        }
+        var showDeleteSuccess = document.getElementById('delete-success-alert');
+  
+        if (showDeleteSuccess){
+          showDeleteSuccess.style.display="block";
+  
+        }
+        setTimeout(function(){
+          if (showDeleteSuccess){
+            showDeleteSuccess.style.display="none";
+          }
+        },4000)
+        this.sessionList$ = this.service.getSessionList();
+      })
+    }
+  }
   modalClose(){
     this.activateAddEdit = false;
     this.sessionList$=this.service.getSessionList();
